@@ -120,7 +120,9 @@ function getAngleBetweenVectors(x1, y1, x2, y2) {
  *     5     => 5
  *     0     => 0
  */
-const getLastDigit = (value) => value.toString().slice(-1);
+const getLastDigit = (value) => {
+  return value % 10;
+};
 
 /**
  * Returns a number by given string representation.
@@ -227,7 +229,9 @@ const toNumber = (value, def) => +value || def;
  *   -2 => -8
  *   0  => 0
  */
-const getCube = (num) => num ** 3;
+const getCube = (num) => {
+  return num ** 3;
+};
 
 /**
  * Returns the Fibonacci number located at the index position.
@@ -322,7 +326,9 @@ function isPowerOfTwo(num) {
  *   0 => 0
  *   Math.PI / 2 => 1
  */
-const getSine = (num) => Math.sin(num);
+const getSine = (num) => {
+  return Math.sin(num);
+};
 
 /**
  * Returns a string representation of a number in a specified base (radix).
@@ -335,7 +341,9 @@ const getSine = (num) => Math.sin(num);
  * 255, 16 => 'ff'
  * 2, 2    => '10'
  */
-const numberToStringInBase = (num, base) => num.toString(base);
+const numberToStringInBase = (num, base) => {
+  return num.toString(base);
+};
 
 /**
  * Returns a string representation of a number in exponential notation.
@@ -347,8 +355,9 @@ const numberToStringInBase = (num, base) => num.toString(base);
  * @example:
  * 12345, 2    => '1.23e+4'
  */
-const toExponential = (num, fractionDigits) =>
-  num.toExponential(fractionDigits);
+const toExponential = (num, fractionDigits) => {
+  return num.toExponential(fractionDigits);
+};
 
 /**
  * Returns a string representation of a number in fixed-point notation.
@@ -361,7 +370,9 @@ const toExponential = (num, fractionDigits) =>
  * 12345, 2    => '12345.00'
  * 12.345, 1   => '12.3'
  */
-const toFixed = (num, fractionDigits) => num.toFixed(fractionDigits);
+const toFixed = (num, fractionDigits) => {
+  return num.toFixed(fractionDigits);
+};
 
 /**
  * Returns a string representation of a number in normal (fixed-point or exponential)
@@ -375,7 +386,9 @@ const toFixed = (num, fractionDigits) => num.toFixed(fractionDigits);
  * 12345, 7    => '12345.00'
  * 12.345, 4   => '12.35'
  */
-const toPrecision = (num, precision) => num.toPrecision(precision);
+const toPrecision = (num, precision) => {
+  return num.toPrecision(precision);
+};
 
 /**
  * Returns the primitive value of a Number object.
@@ -387,7 +400,9 @@ const toPrecision = (num, precision) => num.toPrecision(precision);
  * new Number(5) => 5
  * Number(-5)    => -5
  */
-const getNumberValue = (num) => num.valueOf();
+const getNumberValue = (num) => {
+  return num.valueOf();
+};
 
 /**
  * Returns a boolean value indicating whether the parameter is a number or not.
@@ -404,7 +419,9 @@ const getNumberValue = (num) => num.valueOf();
  * 5        => true
  * '5'      => false
  */
-const isNumber = (num) => Number.isFinite(num);
+const isNumber = (num) => {
+  return Number.isFinite(num);
+};
 /**
  * Returns a boolean value indicating whether a number is an integer or not.
  *
@@ -416,7 +433,9 @@ const isNumber = (num) => Number.isFinite(num);
  * 5.1  => false
  * '5'  => false
  */
-const isInteger = (num) => Number.isInteger(num);
+const isInteger = (number) => {
+  return Number.isInteger(number);
+};
 
 /**
  * Returns a floating point number or, if the number cannot be parsed from the argument, returns NaN.
@@ -428,7 +447,9 @@ const isInteger = (num) => Number.isInteger(num);
  * '4.567abcdefgh' => 4.567
  * 'abcdefgh'      => NaN
  */
-const getFloatOnString = (str) => parseFloat(str);
+const getFloatOnString = (str) => {
+  return Number.parseFloat(str);
+};
 
 /**
  * Returns an integer of the specified base or, if the number cannot be parsed
@@ -444,7 +465,9 @@ const getFloatOnString = (str) => parseFloat(str);
  * '1.234', 2           => 1
  * '10', 8              => 8
  */
-const getIntegerOnString = (str, base) => Number.parseInt(str, base);
+const getIntegerOnString = (str, base) => {
+  return Number.parseInt(str, base);
+};
 
 /**
  * Returns whether a number is a safe integer.
@@ -457,7 +480,9 @@ const getIntegerOnString = (str, base) => Number.parseInt(str, base);
  * 3.5      => false
  * 2 ** 53  => false
  */
-const isSafeInteger = (num) => Number.isSafeInteger(num);
+const isSafeInteger = (num) => {
+  return Number.isSafeInteger(num);
+};
 
 /**
  * Returns the smallest integer less than or equal to a given number.
@@ -469,7 +494,9 @@ const isSafeInteger = (num) => Number.isSafeInteger(num);
  * 5.9  => 5
  * -5.1 => -6
  */
-const roundToSmallestInteger = (num) => Math.floor(num);
+const roundToSmallestInteger = (num) => {
+  return Math.floor(num);
+};
 
 /**
  * Returns the largest integer greater than or equal to a given number.
@@ -481,7 +508,9 @@ const roundToSmallestInteger = (num) => Math.floor(num);
  * 5.1  => 6
  * -5.9 => -5
  */
-const roundToLargestInteger = (num) => Math.ceil(num);
+const roundToLargestInteger = (num) => {
+  return Math.ceil(num);
+};
 
 /**
  * Returns the value of a number rounded to the nearest integer.
@@ -494,7 +523,9 @@ const roundToLargestInteger = (num) => Math.ceil(num);
  * 5.4  => 5
  * -5.5 => -5
  */
-const roundToNearestInteger = (num) => Math.round(num);
+const roundToNearestInteger = (num) => {
+  return Math.round(num);
+};
 
 /**
  * Returns the integer part of a number by removing any fractional digits.
@@ -507,7 +538,9 @@ const roundToNearestInteger = (num) => Math.round(num);
  * 5.4  => 5
  * -5.5 => -5
  */
-const getIntegerPartNumber = (num) => Math.trunc(num);
+const getIntegerPartNumber = (num) => {
+  return Math.trunc(num);
+};
 
 /**
  * Returns the sum of numbers.
@@ -535,7 +568,9 @@ const getSumOfNumbers = (x1, x2, x3) => (x1 + x2 + x3).toPrecision(10);
  * -5, -6 => -5
  * 0, 5   => 5
  */
-const getMaxNumber = (firstNum, secondNum) => Math.max(firstNum, secondNum);
+const getMaxNumber = (firstNum, secondNum) => {
+  return Math.max(firstNum, secondNum);
+};
 
 /**
  * Returns a random integer in the range from min to max.
@@ -561,7 +596,9 @@ const getRandomInteger = (min, max) => Math.random() * (max - min) + min;
  * @example:
  * 3, 4 => 5
  */
-const getHypotenuse = (a, b) => Math.hypot(a, b);
+const getHypotenuse = (a, b) => {
+  return Math.hypot(a, b);
+};
 
 /**
  * Returns count of odd numbers from zero to the resulting number.
