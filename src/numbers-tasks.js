@@ -583,7 +583,8 @@ const getMaxNumber = (firstNum, secondNum) => {
  * -5, 0 => -5 | -4 | -3 | -2 | -1 | 0
  * -1, 1 => -1 | 0 | 1
  */
-const getRandomInteger = (min, max) => Math.random() * (max - min) + min;
+const getRandomInteger = (min, max) =>
+  Math.round(Math.random() * (max - min) + min);
 
 /**
  * Returns the length of the hypotenuse of a right triangle.
